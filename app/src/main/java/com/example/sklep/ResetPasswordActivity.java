@@ -51,7 +51,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
-        
+
 
         phoneNumber.setVisibility(View.GONE);
 
