@@ -103,8 +103,8 @@ public class SellerRegistrationActivity extends AppCompatActivity {
                             sellerMap.put("sid", sid);
                             sellerMap.put("phone", phone);
                             sellerMap.put("email", email);
-                            sellerMap.put("sid", address);
-                            sellerMap.put("sid", name);
+                            sellerMap.put("address", address);
+                            sellerMap.put("name", name);
 
                             rootRef.child("Sellers").child(sid).updateChildren(sellerMap)
                                     .addOnCompleteListener(new OnCompleteListener<Void>() {
