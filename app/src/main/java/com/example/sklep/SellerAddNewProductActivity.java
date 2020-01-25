@@ -57,7 +57,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
     setContentView(R.layout.activity_seller_add_new_product);
 
     CategoryName = getIntent().getExtras().get("category").toString();
-    ProductImageRef = FirebaseStorage.getInstance().getReference().child("Product Images");
+    ProductImageRef = FirebaseStorage.getInstance().getReference().child("Products Images");
     ProductsRef = FirebaseDatabase.getInstance().getReference().child("Products");
     sellersRef = FirebaseDatabase.getInstance().getReference().child("Sellers");
 
@@ -144,7 +144,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
     if(ImageUri == null){
 
-      Toast.makeText(this, "Product image is mandatory...", Toast.LENGTH_SHORT).show();
+      Toast.makeText(this, "Products image is mandatory...", Toast.LENGTH_SHORT).show();
     }
     else if(TextUtils.isEmpty(Description)){
 
@@ -168,8 +168,8 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
   private void StoreProductInformation() {
 
 
-    loadingBar.setTitle("Add new Product");
-    loadingBar.setMessage("Dear Admin, please wait, while we are adding the new product.");
+    loadingBar.setTitle("Add new Products");
+    loadingBar.setMessage("Dear Seller, please wait, while we are adding the new product.");
     loadingBar.setCanceledOnTouchOutside(false);
     loadingBar.show();
 
@@ -200,7 +200,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
       @Override
       public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-        Toast.makeText(SellerAddNewProductActivity.this, "Product Image upload successfully...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(SellerAddNewProductActivity.this, "Products Image upload successfully...", Toast.LENGTH_SHORT).show();
 
         Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
           @Override
@@ -223,7 +223,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
 
               downloadImageUrl = task.getResult().toString();
 
-              Toast.makeText(SellerAddNewProductActivity.this, "got the Product image Url Successfully...", Toast.LENGTH_SHORT).show();
+              Toast.makeText(SellerAddNewProductActivity.this, "got the Products image Url Successfully...", Toast.LENGTH_SHORT).show();
 
               SaveProductInfoToDatabase();
 
@@ -269,7 +269,7 @@ public class SellerAddNewProductActivity extends AppCompatActivity {
                 startActivity(intent);
 
                   loadingBar.dismiss();
-                  Toast.makeText(SellerAddNewProductActivity.this, "Product is added successfully...", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(SellerAddNewProductActivity.this, "Products is added successfully...", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {

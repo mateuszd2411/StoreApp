@@ -3,7 +3,7 @@ package com.example.sklep;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.sklep.Model.Product;
+import com.example.sklep.Model.Products;
 import com.example.sklep.Prevalent.Prevalent;
 import com.example.sklep.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -118,15 +118,15 @@ public class HomeActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
 
-        FirebaseRecyclerOptions<Product> options =
-                new FirebaseRecyclerOptions.Builder<Product>()
-                .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"), Product.class)
+        FirebaseRecyclerOptions<Products> options =
+                new FirebaseRecyclerOptions.Builder<Products>()
+                .setQuery(ProductsRef.orderByChild("productState").equalTo("Approved"), Products.class)
                 .build();
 
-        FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
+        FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
+                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product model) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
 
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());

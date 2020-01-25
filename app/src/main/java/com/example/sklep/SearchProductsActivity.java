@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.sklep.Model.Product;
+import com.example.sklep.Model.Products;
 import com.example.sklep.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -60,15 +60,15 @@ public class SearchProductsActivity extends AppCompatActivity {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Products");
 
-        FirebaseRecyclerOptions<Product> options =
-                new FirebaseRecyclerOptions.Builder<Product>()
-                .setQuery(reference.orderByChild("pname").startAt(SearchInput), Product.class)
+        FirebaseRecyclerOptions<Products> options =
+                new FirebaseRecyclerOptions.Builder<Products>()
+                .setQuery(reference.orderByChild("pname").startAt(SearchInput), Products.class)
                 .build();
 
-        FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
-                new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
+        FirebaseRecyclerAdapter<Products, ProductViewHolder> adapter =
+                new FirebaseRecyclerAdapter<Products, ProductViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Product model) {
+                    protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull final Products model) {
 
 
                         holder.txtProductName.setText(model.getPname());

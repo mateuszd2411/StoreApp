@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
-import com.example.sklep.Model.Product;
+import com.example.sklep.Model.Products;
 import com.example.sklep.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -152,7 +152,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                Product products = dataSnapshot.getValue(Product.class);
+                Products products = dataSnapshot.getValue(Products.class);
 
                 productName.setText(products.getPname());
                 productPrice.setText(products.getPrice());

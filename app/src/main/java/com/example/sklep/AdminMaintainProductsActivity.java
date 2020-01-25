@@ -85,7 +85,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
 
-                Toast.makeText(AdminMaintainProductsActivity.this, "The Product is deleted successfully.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminMaintainProductsActivity.this, "The Products is deleted successfully.", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -100,13 +100,13 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
 
         if(pName.equals(""))
         {
-            Toast.makeText(this, "Write down Product Name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Write down Products Name", Toast.LENGTH_SHORT).show();
         } else if(pPrice.equals(""))
         {
-            Toast.makeText(this, "Write down Product Price", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Write down Products Price", Toast.LENGTH_SHORT).show();
         } else if(pDescription.equals(""))
         {
-            Toast.makeText(this, "Write down Product Description", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Write down Products Description", Toast.LENGTH_SHORT).show();
         } else
         {
             HashMap<String, Object> productMap = new HashMap<>();

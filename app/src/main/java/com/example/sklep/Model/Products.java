@@ -1,15 +1,15 @@
 package com.example.sklep.Model;
 
-public class Product {
+public class Products {
 
     private String pname, description, price, image, category, pid, date, time;
 
-    public Product()
+    public Products()
     {
 
     }
 
-    public Product(String pname, String description, String price, String image, String category, String pid, String date, String time) {
+    public Products(String pname, String description, String price, String image, String category, String pid, String date, String time) {
         this.pname = pname;
         this.description = description;
         this.price = price;
