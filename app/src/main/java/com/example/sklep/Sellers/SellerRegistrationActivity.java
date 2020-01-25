@@ -115,7 +115,9 @@ public class SellerRegistrationActivity extends AppCompatActivity {
                                             Toast.makeText(SellerRegistrationActivity.this, "you are register successfully.", Toast.LENGTH_SHORT).show();
 
                                             Intent intent = new Intent(SellerRegistrationActivity.this, SellerHomeActivity.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             startActivity(intent);
+                                            finish();
 
                                         }
                                     });
